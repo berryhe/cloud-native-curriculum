@@ -22,6 +22,7 @@ func NewResp(w http.ResponseWriter, r *http.Request) *Response {
 		req:            r,
 	}
 }
+
 func (resp *Response) handlePrintLog() {
 	path := resp.req.URL.Path
 	raw := resp.req.URL.RawQuery
@@ -78,6 +79,7 @@ func (resp *Response) ClientIP() string {
 
 	return remoteIP.String()
 }
+
 func HandleRootPath(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("VERSION", Version)
